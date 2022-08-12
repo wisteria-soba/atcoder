@@ -16,4 +16,30 @@ int main(void)
 {
     cin.tie(0);
     ios::sync_with_stdio(0);
+    int n;
+    cin >> n;
+    vector<int> ks;
+    vector<int> kcnts;
+    ks.push_back(0);
+    kcnts.push_back(0);
+    int cnt = 0;
+    for(int i = 0; i <n;i++){
+        int a;
+        cin >> a;
+        cnt++;
+        if(ks.back() != a){
+            kcnts.push_back(1);
+            ks.push_back(a);
+        }
+        else{
+            kcnts.back()++;
+            if(kcnts.back() == ks.back()) {
+                cnt -= kcnts.back();
+                ks.pop_back();
+                kcnts.pop_back();
+            }
+        }
+        cout << cnt << endl;
+    }
+    return 0;
 }

@@ -16,4 +16,13 @@ int main(void)
 {
     cin.tie(0);
     ios::sync_with_stdio(0);
+    ll n;
+    cin >> n;
+    set<int> aset;
+    for(int i = 0; i < n; i++){
+        int a;
+        cin >> a;
+        aset.insert(a);
+    }
+    cout << aset.size() << endl;
 }

@@ -16,4 +16,30 @@ int main(void)
 {
     cin.tie(0);
     ios::sync_with_stdio(0);
+    ll n, x;
+    cin >> n >> x;
+    vector<vector<bool>> visited(n + 1, vector<bool>(x + 1, false));
+    visited[0][0] = true;
+    for(ll i = 1; i < visited.size(); i++) {
+        int a, b;
+        cin >> a >> b;
+        for(ll j = 0; j < visited[i].size();j++) {
+            if(visited[i-1][j]){
+                if(j + a <= x){
+                    visited[i][j + a] = true;
+                }
+                if(j+b <= x){
+                    visited[i][j + b] = true;
+                }
+                
+            }
+        }
+    }
+    if(visited[n][x]){
+        cout << "Yes" << endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
+    return 0;
 }

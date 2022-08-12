@@ -16,4 +16,13 @@ int main(void)
 {
     cin.tie(0);
     ios::sync_with_stdio(0);
+    int a, b;
+    cin >> a >> b;
+    int abs_diff = abs(a - b);
+    if(abs_diff == 1 || abs_diff == 9) {
+        cout << "Yes" << endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
 }
